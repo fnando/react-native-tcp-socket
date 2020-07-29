@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "json"
 
 package = JSON.parse(File.read(File.join(__dir__, "package.json")))
@@ -8,19 +10,17 @@ Pod::Spec.new do |s|
   s.summary      = package["description"]
   s.description  = <<-DESC
                   react-native-tcp-socket
-                   DESC
+  DESC
   s.homepage     = "https://github.com/Rapsssito/react-native-tcp-socket"
   s.license      = "MIT"
   # s.license    = { :type => "MIT", :file => "FILE_LICENSE" }
-  s.authors      = { "Rapsssito" => "contact@rodrigomartin.dev" }
-  s.platforms    = { :ios => "9.0", :tvos => "10.0", :osx => "10.14" }
-  s.source       = { :git => "https://github.com/Rapsssito/react-native-tcp-socket.git", :tag => "#{s.version}" }
+  s.authors      = {"Rapsssito" => "contact@rodrigomartin.dev"}
+  s.platforms    = {ios: "9.0", tvos: "10.0", osx: "10.14"}
+  s.source       = {git: "https://github.com/Rapsssito/react-native-tcp-socket.git", tag: s.version.to_s}
 
   s.source_files = "ios/**/*.{h,m,swift}"
   s.requires_arc = true
 
   s.dependency "React"
-  s.dependency "CocoaAsyncSocket"
-
+  # s.dependency "CocoaAsyncSocket"
 end
-
